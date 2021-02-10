@@ -1,0 +1,52 @@
+﻿@page
+@model ot6.Pages.IlmoittauduModel
+@{
+}
+
+<div class="text-center">
+
+    <h4 class="display-6">ILMOITTAUTUMISLOMAKE</h4>
+
+</div>
+
+    <form method="get" action="/ilmoittaudu">
+        <div class="row mt-3">
+        <div class="col">
+            <input type="text" class="form-control" name="etunimi" placeholder="Etunimi">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="sukunimi" placeholder="Sukunimi">
+        </div>
+        </div>
+
+        <div class="row mt-3">
+        <div class="col">
+            <input type="text" class="form-control" name="paikkakunta" placeholder="Paikkakunta">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="puhelinnumero" placeholder="Puhelinnumero">
+        </div>
+        </div>
+
+        <div class="row mt-3">
+        <div class="col">
+            <input type="text" class="form-control" name="sahkoposti" placeholder="Sähköposti">
+        </div>
+        </div>
+
+
+        <div class="form-group mt-3">
+            <label for="exampleFormControlSelect1">Valitse sarja</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="sarja">
+                @foreach (string sarja in Model.Sarjalista)
+                    {
+                        <option>@sarja</option>
+                    }
+
+            </select>
+        </div>
+
+        <a class="btn btn-outline-success" href="/Kiitos">Lähetä</a>
+
+    </form>
+
