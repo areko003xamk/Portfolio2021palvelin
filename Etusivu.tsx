@@ -4,18 +4,15 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 
 const Etusivu: React.FC = () => {
-
+ 
   return (   
       
 <Jumbotron fluid>
   <Container>
-    <h1>Suomalaisia postimerkkejä 1860 - 2014</h1>
-    <p>
-      Kattava kokoelma kotimaisia postimerkkejä yli 150 vuoden ajalta.
-    </p>
+    <h1>Kymmenottelukisa, jossa kunto punnitaan!</h1>
 
     <Card>
-        <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/assets/kuvat/postimerkki.jpg`} />
+        <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/assets/kuvat/10_ottelu.jpg`} />
     </Card>
 
   </Container>
