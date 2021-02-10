@@ -1,4 +1,5 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
 
 interface Props {
             children : any
@@ -6,8 +7,9 @@ interface Props {
 
 const Verkkokauppa : React.FC<Props> = (props : Props) => {
     return (
-        <div className="container">{props.children}</div>
+        <Container>{props.children}</Container>
     )
 }
+
 
 export default Verkkokauppa;
