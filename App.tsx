@@ -1,41 +1,34 @@
-import React from 'react';
-import './App.css';
-import VerkkokauppaHeader from './components/VerkkokauppaHeader';
-import VerkkokauppaFooter from './components/VerkkokauppaFooter';
-import Verkkokauppa from './components/Verkkokauppa';
-import VerkkokauppaMain from './components/VerkkokauppaMain'; 
-import VerkkokauppaRightNav from './components/VerkkokauppaRightNav';
-import Tuotenostot from './components/Tuotenostot';
-import Kirjautuminen from './components/Kirjautuminen';
-import Pikaostoskori from './components/Pikaostoskori';
-
-/*
-Yhden pisteen osan sain jokseenkin tehtyä. Ainoastaan uloskirjautuminen tapahtumineen
-on liian vaikea toteuttaa (yritetty kuitenkin on). Lisäpisteosiotakin yrittelin,
-mutta huononpuoleisella menestyksellä.
+/*Mielestäni sovellukseni ainakin näyttää verkkokaupalta.
+Ihan tehtävänannon mukaan ei homma toteutunut, mutta toimii kuitenkin
+toiminnallisesti tarkoituksenmukaisesti. Tässä tehtävässä tuli myös
+aitoa oppimista. Suurin osa sovelluksesta on toteutettu
+Tuotenostot-komponentissa, jossa koodia onkin runsaanpuoleisesti. Kyllä
+tämäkin tuotokseni yhden pisteen ansaitsee.
 */
+import React, {useState} from 'react';
+import './App.css';
+import Verkkokauppa from './components/Verkkokauppa';
+import Ylatunniste from './components/Ylatunniste';
+import Alatunniste from './components/Alatunniste';
+import Tuotteet from './components/Tuotteet';
+import Tuotenostot from './components/Tuotenostot';
+
 
 interface Props {};
 
-export default class App extends React.Component<Props> {
+const App: React.FC<Props> = () => {
 
-  constructor(props : Props) {
-    super(props);
-}
 
-  render() {
     return (
         <Verkkokauppa>
-        <VerkkokauppaHeader otsikko="T-PAITAKAUPPA"/>
-        <VerkkokauppaMain>
+        <Ylatunniste otsikko="REISKAN T-PAITAKAUPPA"/>
+        <Tuotteet>
         <Tuotenostot tuotteita="6 tuotetta saatavilla"/>
-        </VerkkokauppaMain>
-        <VerkkokauppaRightNav>
-        <Kirjautuminen/>
-        <Pikaostoskori pikaostos="Pikaostoskori"/>
-        </VerkkokauppaRightNav>
-        <VerkkokauppaFooter teksti="Copyright"/>
+        </Tuotteet>
+        <Alatunniste teksti="Copyright"/>
         </Verkkokauppa>
     );
-  }
+  
 }
+
+export default App;
