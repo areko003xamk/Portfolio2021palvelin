@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OT 10 verkkokauppa</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+
+        <h1>T-paitakauppa Oy</h1>
+
+        <h2>Tuoteluettelo</h2>
+
+        <table class="table table-dark">
+            <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Väri</th>
+              <th scope="col">Koko</th>
+              <th scope="col">Hinta</th>
+              <th scope="col">Varastotilanne</th>
+              <th scope="col">Kuva</th>
+            </tr>
+          </thead>
+            <tbody>
+            <tr th:each="tuote : ${tuoteluettelo}">
+              <td th:text="${tuote.id}"></td>
+              <td th:text="${tuote.vari}"></td>
+              <td th:text="${tuote.koko}"></td>
+              <td th:text="${tuote.hinta}"></td>
+              <td th:text="${tuote.varastotilanne}"></td>
+              <td th:text="${tuote.kuva}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
